@@ -1,0 +1,11 @@
+FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
+ARG APP_ENV=dev
+ARG APP_XMX=256m
+ARG APP_XMS=128m
+ENV XMX=${APP_XMX}
+ENV XMS=${APP_XMS}
+ENV APP_PROFILE=${APP_ENV}
+ARG JAR_FILE=target/*.jar
+ARG AI_AGENT_FILE=AI-Agent.xml
+COPY ${JAR_FILE} app.jar
+
