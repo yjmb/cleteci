@@ -25,7 +25,7 @@ public class CleteciRestController {
 	@Autowired
 	BookService service;
 
-	@PutMapping(path = "/create-book", produces = "application/json")
+	@PutMapping(path = "/api/create-book", produces = "application/json")
 	public GenericResponse createBook(@RequestBody Book request) {
 		log.info("Inicio operacion para insertar un libro.");
 
@@ -35,7 +35,7 @@ public class CleteciRestController {
 		return response;
 	}
 
-	@GetMapping(path = "/get-all-books", produces = "application/json")
+	@GetMapping(path = "/api/get-all-books", produces = "application/json")
 	public GenericResponse<List<Book>> getAllBooks() {
 		log.info("Inicio operacion para listar todos los libros.");
 
@@ -45,7 +45,7 @@ public class CleteciRestController {
 		return response;
 	}
 
-	@GetMapping(path = "/get-book-by-id", produces = "application/json")
+	@GetMapping(path = "/api/get-book-by-id", produces = "application/json")
 	public GenericResponse<Book> getBookById(@RequestParam Long bookId) {
 		log.info("Inicio operacion para obtener un libro dado su Id.");
 
@@ -56,7 +56,7 @@ public class CleteciRestController {
 	}
 	
 
-	@PostMapping(path = "/update-book", produces = "application/json")
+	@PostMapping(path = "/api/update-book", produces = "application/json")
 	public GenericResponse updateBook(@RequestBody Book request) {
 		log.info("Inicio operacion para actualizar un libro.");
 
@@ -66,7 +66,7 @@ public class CleteciRestController {
 		return response;
 	}
 
-	@DeleteMapping(path = "/delete-book-by-id", produces = "application/json")
+	@DeleteMapping(path = "/api/delete-book-by-id", produces = "application/json")
 	public GenericResponse deleteBook(@RequestParam Long bookId) {
 		log.info("Inicio operacion para eliminar un libro.");
 
